@@ -47,6 +47,10 @@ class LoginForm extends React.Component {
         }
     }
 
+    goToRegister = () => {
+        this.props.navigation.navigate('Register')
+    }
+
     loginUser = ()=>{
         if ( !this.state.email ){
             Alert.alert('Please enter a email')
@@ -113,6 +117,11 @@ class LoginForm extends React.Component {
                                 Login
                             </Text>
                         </TouchableHighlight>
+                        <TouchableHighlight onPress={this.goToRegister} underlayColor='#31e981' style={styles.registerButtonContainer}>
+                            <Text style = {styles.buttons}>
+                                Register
+                            </Text>
+                        </TouchableHighlight>
                     </React.Fragment>
                 )}
                 
@@ -144,6 +153,13 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255, 255, 255, 0.7)'
     },
     buttonContainer: {
+        backgroundColor: '#7DDBE6',
+        paddingVertical: 10,
+        borderRadius: 5,
+        marginBottom: 10,
+        width: '80%',
+    },
+    registerButtonContainer: {
         backgroundColor: '#7DDBE6',
         paddingVertical: 10,
         borderRadius: 5,

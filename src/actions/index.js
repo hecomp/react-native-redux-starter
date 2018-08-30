@@ -13,6 +13,19 @@ export const login = ({email, password}) => {
     }
 }
 
+export const register = ({email, password}) => {
+    return dispatch => {
+        dispatch({type: 'LOADING'})
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then(user => {
+                dispatch({type: 'REGISTER_SUCCESS', payload: user})
+            })
+            .catch(function(error) {
+                dispatch({type: 'REGISTER_FAILURE', error: error.message})
+          });
+    }
+}
+
 export const createIdea = ({title, idea}) => {
     const { uid } = firebase.auth().currentUser
     

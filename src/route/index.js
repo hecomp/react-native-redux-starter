@@ -5,13 +5,20 @@ import IdeaList from '../components/IdeaList'
 import AddIdea from '../components/AddIdea'
 import EditIdea from '../components/EditIdea'
 import HeaderIcon from '../components/HeaderIcon'
+import Register from '../screens/Register'
 
 export const authRoute = {
     Login: {
         screen: LoginForm,
         navigationOptions: {
             headerTitle: 'Login'
-        }
+        },
+    },
+    Register: {
+        screen: Register,
+        navigationOptions: {
+            headerTitle: 'Register'
+        },
     },
 }
 
